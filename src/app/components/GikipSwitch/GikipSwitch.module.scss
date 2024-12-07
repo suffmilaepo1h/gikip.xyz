@@ -1,0 +1,94 @@
+.gikipSwitch {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+
+  .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    transition: all 0.3s ease-in-out;
+
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 400px;
+      object-fit: cover;
+      user-select: none;
+      transition: all 0.3s ease-in-out;
+    }
+    h1 {
+      opacity: 0.1;
+      transition: opacity 0.3s ease-in-out;
+    }
+    &.evil {
+      h1 {
+        color: #ff0000;
+      }
+      border-right: 1px solid #000;
+      img {
+        right: -200px;
+      }
+    }
+    &.good {
+      h1 {
+        color: #00ff00;
+      }
+      border-left: 1px solid #000;
+      img {
+        left: -200px;
+      }
+    }
+    &:hover {
+      width: 160%;
+      cursor: pointer;
+
+      h1 {
+        opacity: 1;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+    &.evil:hover {
+      img {
+        right: 0;
+      }
+    }
+    &.good:hover {
+      img {
+        left: 0;
+      }
+    }
+
+    .description {
+      position: absolute;
+      bottom: 10%;
+      width: 80%;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
+    }
+    &.evil {
+      .description {
+        color: #ff0000;
+      }
+    }
+    &.good {
+      .description {
+        color: #00ff00;
+      }
+    }
+  }
+}

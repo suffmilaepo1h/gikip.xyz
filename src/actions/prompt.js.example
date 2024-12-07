@@ -1,0 +1,20 @@
+"use server";
+
+export const prompt = async (userPrompt) => {
+  try {
+    const result = fetch("https://your-api-url.com/api/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userPrompt,
+      }),
+    }).then((res) => res.json());
+
+    return result;
+  } catch (error) {
+    console.error("err:", error.response?.data || error.message);
+    return "Something went wrong";
+  }
+};

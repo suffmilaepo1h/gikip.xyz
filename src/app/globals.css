@@ -1,0 +1,58 @@
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --glow-color: hsl(186 100% 69%);
+  --view-unit: calc(1vw + 1vh);
+  --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+@font-face {
+  font-family: "Swanky";
+  src: url("/fonts/Swanky.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+  font-family: "Swanky", monospace;
+}

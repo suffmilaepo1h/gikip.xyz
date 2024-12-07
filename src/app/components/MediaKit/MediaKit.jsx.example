@@ -1,0 +1,38 @@
+"use server";
+
+import React from "react";
+
+async function fetchMediaKitData() {
+  try {
+    const response = await fetch(
+        "http://localhost:5555/"
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch MediaKit data");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch MediaKit data:", error);
+    return null;
+  }
+}
+
+export default async function MediaKit() {
+  const data = await fetchMediaKitData();
+
+  return (
+    <div>
+      <p>{data.twitterUrl}</p>
+      <p>{data.contractAddress}</p>
+    </div>
+  );
+}
